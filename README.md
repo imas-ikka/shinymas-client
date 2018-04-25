@@ -4,7 +4,6 @@ Electronで書かれたアイドルマスター シャイニーカラーズの�
 Electronの練習がてら書いたものなので色々ヤバイところがあるかと思いますので、issueだったりプルリク送っていただけると幸いです。
 
 # 開発環境および動作検証環境
-
 ## 開発環境
 OS : ArchLinux 4.15.15-1-ARCH
 Electron : v1.8.4
@@ -25,7 +24,9 @@ OS : Windows 8.1 Pro with Update 64bit
 Electron : v1.8.4
 
 
-macOSではまだ動作の検証を行っていません。確認が取れ次第報告いたします。
+OS : macOS High Sierra 10.13.4
+
+Electron : v1.8.4
 
 
 # 免責事項
