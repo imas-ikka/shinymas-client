@@ -11,15 +11,22 @@ Electron : v1.8.4
 
 ## 検証環境
 OS : ArchLinux 4.15.15-1-ARCH
+
 Electron : v1.8.4
+
 
 OS : LinuxMint 18.3 Sylvia (Linux 4.13.16-041316-generic)
+
 Electron : v1.8.4
+
 
 OS : Windows 8.1 Pro with Update 64bit 
+
 Electron : v1.8.4
 
+
 macOSではまだ動作の検証を行っていません。確認が取れ次第報告いたします。
+
 
 # 免責事項
 当コードおよびリリースした実行形式ファイルを使用したことで発生したいかなる損害の一切の責任を負いません。
