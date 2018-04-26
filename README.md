@@ -1,28 +1,34 @@
 # shinymas-client
+Electronで書かれたアイドルマスター シャイニーカラーズの非公式
 
-> An electron-vue project
+Electronの練習がてら書いたものなので色々ヤバイところがあるかと思いますので、issueだったりプルリク送っていただけると幸いです。
 
-#### Build Setup
+# 開発環境および動作検証環境
+## 開発環境
+OS : ArchLinux 4.15.15-1-ARCH
+Electron : v1.8.4
 
-``` bash
-# install dependencies
-npm install
+## 検証環境
+OS : ArchLinux 4.15.15-1-ARCH
 
-# serve with hot reload at localhost:9080
-npm run dev
-
-# build electron application for production
-npm run build
-
-# run unit & end-to-end tests
-npm test
+Electron : v1.8.4
 
 
-# lint all JS/Vue component files in `src/`
-npm run lint
+OS : LinuxMint 18.3 Sylvia (Linux 4.13.16-041316-generic)
 
-```
+Electron : v1.8.4
 
----
 
-This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[7c4e3e9](https://github.com/SimulatedGREG/electron-vue/tree/7c4e3e90a772bd4c27d2dd4790f61f09bae0fcef) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
+OS : Windows 8.1 Pro with Update 64bit 
+
+Electron : v1.8.4
+
+
+OS : macOS High Sierra 10.13.4
+
+Electron : v1.8.4
+
+
+# 免責事項
+当コードおよびリリースした実行形式ファイルを使用したことで発生したいかなる損害の一切の責任を負いません。
+自己責任でお使い下さい。
