@@ -6,9 +6,101 @@ html{
 body{
  margin:  0;
  padding: 0;
- height:  100vh;
+ position: relative;
+ height: 100vh;
 }
 
-webview{
-  height: 100vh;
+#titlebar{
+  display: flex;
+  justify-content: space-between;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+  height: 30px;
+}
+
+ul.titlebar_object{
+  width: 100vw;
+  height: 30px;
+  border: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+ul.titlebar_object li{
+  display: inline-block;
+  height: 30px;
+}
+
+ul.titlebar_bottonArea{
+  text-align: right;
+  width: 100vw;
+  height: 30px;
+  margin-top: 0;
+}
+
+ul.titlebar_bottonArea li{
+  -webkit-app-region: no-drag;
+  display: inline-block;
+  height: 30px;
+}
+#app_icon{
+  margin: 1px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+}
+
+#title_text{
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  display: inline-block;
+  vertical-align: text-bottom;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.titlebar_botton{
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-left: 2px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
+
+#reload_icon{
+  background-image: url("img_src/reload.svg");
+  display: inline-block;
+  padding: 1px;
+  width: 28px;
+  height: 28px;
+}
+
+#fullscreen_icon{
+  background-image: url("img_src/full.svg");
+  display: inline-block;
+  padding: 1px;
+  width: 28px;
+  height: 28px;
+}
+
+#close_icon{
+  background-image: url("img_src/close.svg");
+  display: inline-block;
+  padding: 1px;
+  width: 28px;
+  height: 28px;
+}
+
+#web_view{
+  position: absolute;
+  top: 30px;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }

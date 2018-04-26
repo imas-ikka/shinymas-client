@@ -4,11 +4,53 @@
     <title>アイドルマスター シャイニーカラーズ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <link rel="stylesheet" href="style.css">
+    <script>
+      const remote = require('electron').remote
+      let w = remote.getCurrentWindow()
+      let countFullScreenPushed = 0;
+      onload=function(){
+        document.getElementById("close_icon").onclick = function(){
+          w.close()
+        };
+
+        document.getElementById("fullscreen_icon").onclick = function(){
+          if(countFullScreenPushed % 2 === 0){
+            w.setFullScreen(true);
+            countFullScreenPushed++;
+          }else{
+            w.setFullScreen(false);
+            countFullScreenPushed++;
+          }
+          // let titleBarObject = document.getElementById("titlebar_object");
+          // let titleBarButtonArea = document.getElementById("titlebar_bottonArea");
+          // titleBarObject.style.height = 0;
+          // titleBarButtonArea.style.height = 0;
+        };
+
+        document.getElementById("reload_icon").onclick = function(){
+          let webview = document.getElementById("web_view");
+          webview.reload();
+        };
+      };
+    </script>
   </head>
+
   <body>
-    <webview
-    id="main_view"
-    src="https://shinycolors.enza.fun/">
-    </webview>
+    <div id="main">
+      <div id="titlebar">
+        <ul class="titlebar_object">
+          <li><img id ="app_icon" src="https://shinycolors.enza.fun/icon_192x192.png" width=28 height=28></li>
+          <li><p id="title_text">アイドルマスター シャイニーカラーズ</p></li>
+        </ul>
+
+        <ul class="titlebar_bottonArea">
+          <li><button type="button" class="titlebar_botton"><span id="reload_icon"></span></button></li>
+          <li><button type="button" class="titlebar_botton"><span id="fullscreen_icon"></span></button></li>
+          <li><button type="button" class="titlebar_botton"><span id="close_icon"></span></button></li>
+        </ul>
+      </div>
+      <div id="main_view">
+        <webview id="web_view" src="https://shinycolors.enza.fun/"></webview>
+    </div>
   </body>
 </html>
