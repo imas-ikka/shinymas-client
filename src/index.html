@@ -4,57 +4,6 @@
     <title>アイドルマスター シャイニーカラーズ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <link rel="stylesheet" href="style.css">
-    <script>
-      const remote = require('electron').remote
-      let w = remote.getCurrentWindow()
-      let countFullScreenPushed = 0;
-      onload=function(){
-        document.getElementById("close_icon").onclick = function(){
-          w.close()
-        };
-        //最大化ボタンイベント
-        document.getElementById("fullscreen_icon").onclick = function(){
-          /*if(countFullScreenPushed % 2 === 0){
-            w.setFullScreen(true);
-            countFullScreenPushed++;
-          }else{
-            w.setFullScreen(false);
-            countFullScreenPushed++;
-          }
-          let titleBarObject = document.getElementsByClassName("titlebar_object")[0];
-          let titleBarButtonArea = document.getElementsByClassName("titlebar_bottonArea")[0];
-          titleBarObject.style.height = 0;
-          titleBarButtonArea.style.height = 0; */
-          w.setFullScreen(true);
-          const titleBar = document.getElementById("titlebar");
-          titleBar.style.display = "none";
-          document.getElementById("web_view").style.top=0;
-        };
-        //https://stackoverflow.com/questions/3369593/how-to-detect-escape-key-press-with-pure-js-or-jquery
-        document.onkeydown = function(evt) {
-        evt = evt || window.event;
-        var isEscape = false;
-        if ("key" in evt) {
-            isEscape = (evt.key == "Escape" || evt.key == "Esc");
-        } else {
-            isEscape = (evt.keyCode == 27);
-        }
-        const wv = document.getElementById("web_view");
-        if (isEscape&& wv.style.top==="0px") {
-          wv.style.top="30px";
-          document.getElementById("titlebar").style.display="flex";
-          w.setFullScreen(false);
-        }
-      };
-      function test(){
-        w.capturePage();
-      }
-        document.getElementById("reload_icon").onclick = function(){
-          let webview = document.getElementById("web_view");
-          webview.reload();
-        };
-      };
-    </script>
   </head>
 
   <body>
@@ -74,5 +23,7 @@
       <div id="main_view">
         <webview id="web_view" src="https://shinycolors.enza.fun/"></webview>
     </div>
+    <!-- タイトルバー上ボタンの機能実装用JavaScriptファイル -->
+    <script type="text/javascript" src="./functions.js"></script>
   </body>
 </html>
