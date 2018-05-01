@@ -1,6 +1,5 @@
 {
   "name": "shinymas-client",
-  "version": "0.0.1",
   "description": "アイドルマスター シャイニーカラーズ 非公式クライアント",
   "main": "main.js",
   "author": "panakuma"
