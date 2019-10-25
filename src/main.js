@@ -1,25 +1,39 @@
 'use strict'
 
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-let mainWindow
+const {app, BrowserView, BrowserWindow} = require('electron');
 
-// Electronの初期化完了後に実行
-app.on('ready', function () {
-  // メイン画面の表示。ウィンドウの幅、高さを指定
-  mainWindow = new BrowserWindow({width: 1136, height: 670, frame: false, icon: './img_src/shinymas.ico', 'node-integration': false})
-  mainWindow.loadURL('file://' + __dirname + '/index.html')
+app.on('ready', () => {
+  let win = new BrowserWindow({
+    width: 1136,
+    height: 670,
+    minWidth: 1136,
+    minHeight: 670,
+    maxWidth: 1136,
+    maxHeight: 670,
+    //frame: false,
+    icon: './img_src/shinymas.ico'
+  });
 
-  // ウィンドウが閉じられたらアプリも終了
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
-})
+  win.on('closed', () => {
+    win = null;
+  });
+
+  let view = new BrowserView();
+  win.setBrowserView(view);
+  view.setBounds({
+    x: 0,
+    y: 0,
+    width: 1136,
+    height: 640
+  });
+  //view.webContents.loadURL('file://' + __dirname + '/index.html');
+  view.webContents.loadURL('https://shinycolors.enza.fun/');
+});
+
 
 // macOSの場合全てのウィンドウが閉じたら終了
-app.on('window-all-closed', function () {
+app.on('window-all-closed', () => {
   if (process.platform != 'darwin') {
-    app.quit()
+    app.quit();
   }
 })

@@ -1,5 +1,4 @@
-const remote = require('electron').remote
-let w = remote.getCurrentWindow()
+let w = require('electron').remote.getCurrentWindow();
 let countFullScreenPushed = 0;
 
 //閉じるボタンイベント
