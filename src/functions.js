@@ -1,36 +1,37 @@
-let w = require('electron').remote.getCurrentWindow();
+const w = require('electron').remote.getCurrentWindow();
 let countFullScreenPushed = 0;
 
 //閉じるボタンイベント
-document.getElementById("close_icon").onclick = function(){
-  w.close()
-};
+document.getElementById("close_icon").addEventListener("click", () => {
+  w.close();
+  console.log("clicked exit");
+}, false);
 
 //タッチスクリーン対応
-document.getElementById("close_icon").addEventListener('touchStart', function(){
+document.getElementById("close_icon").addEventListener('touchStart', () => {
   w.close()
 }, false);
 
 
 //最大化ボタンイベント
-document.getElementById("fullscreen_icon").onclick = function(){
-  w.setFullScreen(true);
-  const titleBar = document.getElementById("titlebar");
-  titleBar.style.display = "none";
-  document.getElementById("web_view").style.top = 0;
-};
-
-//タッチスクリーン対応
-document.getElementById("fullscreen_icon").addEventListener('touchStart', function(){
+document.getElementById("fullscreen_icon").addEventListener("click", () => {
+  console.log("clicked exit");
   w.setFullScreen(true);
   const titleBar = document.getElementById("titlebar");
   titleBar.style.display = "none";
   document.getElementById("web_view").style.top = 0;
 }, false);
 
-//引用元 https://stackoverflow.com/questions/3369593/how-to-detect-escape-key-press-with-pure-js-or-jquery
+//タッチスクリーン対応
+document.getElementById("fullscreen_icon").addEventListener('touchStart', () => {
+  w.setFullScreen(true);
+  const titleBar = document.getElementById("titlebar");
+  titleBar.style.display = "none";
+  document.getElementById("web_view").style.top = 0;
+}, false);
+
 //最大化後Esc押下で元に戻る
-document.onkeydown = function(evt) {
+document.addEventListener("keydown", (evt) => {
   evt = evt || window.event;
   let isEscape = false;
   if ("key" in evt) {
@@ -44,16 +45,16 @@ document.onkeydown = function(evt) {
     document.getElementById("titlebar").style.display = "flex";
     w.setFullScreen(false);
   }
-};
+}, false);
 
 //リロードボタンのイベント
-document.getElementById("reload_icon").onclick = function(){
+document.getElementById("reload_icon").addEventListener("click", () => {
   document.getElementById("web_view").reload();
-};
+}, false);
 
-document.getElementById("reload_icon").addEventListener('touchStart', function(){
+document.getElementById("reload_icon").addEventListener('touchStart', () => {
   document.getElementById("web_view").reload();
-});
+}, false);
 //スクリーンショット機能実装テスト
 function test(){
   w.capturePage();
