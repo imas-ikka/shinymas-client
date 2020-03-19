@@ -5,29 +5,20 @@ Electronの練習がてら書いたものなので色々ヤバイところがあ
 
 # 開発環境および動作検証環境
 ## 開発環境
-OS : ArchLinux 4.15.15-1-ARCH
-Electron : v1.8.4
+OS : ArchLinux systemd 245 5.5.9-arch1-2 #1 SMP PREEMPT Thu, 12 Mar 2020 23:01:33 +0000 x86_64 GNU/Linux
+
+Electron : v7.1.4
 
 ## 検証環境
-OS : ArchLinux 4.15.15-1-ARCH
-
-Electron : v1.8.4
-
-
-OS : LinuxMint 18.3 Sylvia (Linux 4.13.16-041316-generic)
-
-Electron : v1.8.4
+### Linux
+ArchLinux systemd 245 5.5.9-arch1-2 #1 SMP PREEMPT Thu, 12 Mar 2020 23:01:33 +0000 x86_64 GNU/Linux
 
 
-OS : Windows 8.1 Pro with Update 64bit 
+### Windows
+OS : Windows 8.1 Pro with Update 64bit
 
-Electron : v1.8.4
-
-
-OS : macOS High Sierra 10.13.4
-
-Electron : v1.8.4
-
+### macOS
+macOS High Sierra 10.13.4
 
 # 免責事項
 当コードおよびリリースした実行形式ファイルを使用したことで発生したいかなる損害の一切の責任を負いません。
