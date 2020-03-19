@@ -5,10 +5,10 @@
   "author": "panakuma",
   "version": "0.0.4",
   "scripts": {
-    "start": "electron ./",
+    "start": "electron ./src",
     "build_win": "electron-packager ./ shinymas-client --platform=win32 --arch=all --out=./build/win32 --icon=./img/Windows.ico",
     "build_mac": "electron-packager ./ shinymas-client --platform=darwin --arch=all --out=./build/mac --icon=./img/shinymas.icns",
-    "build_linux": "electron-packager ./ shinymas-client --platform=linux --arch=all --out=./build/linux --icon=./img/shinymas.ico"
+    "build_linux": "electron-packager ./src shinymas-client --platform=linux --arch=all --out=./build/linux --icon=./img/shinymas.ico"
   },
   "repository": {
     "type": "git",
