@@ -15,7 +15,7 @@ ArchLinux systemd 245 5.5.9-arch1-2 #1 SMP PREEMPT Thu, 12 Mar 2020 23:01:33 +00
 
 
 ### Windows
-OS : Windows 8.1 Pro with Update 64bit
+Windows 8.1 Pro with Update 64bit
 
 ### macOS
 macOS High Sierra 10.13.4
