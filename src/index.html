@@ -4,13 +4,9 @@
     <title>アイドルマスター シャイニーカラーズ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <link rel="stylesheet" href="style.css">
-  <script>
-    const { BrowserWindow } = require('electron').remote;
-  </script>
   </head>
 
   <body>
-    <div id="main">
       <div id="titlebar">
         <ul class="titlebar_object">
           <li><img id ="app_icon" src="https://shinycolors.enza.fun/icon_192x192.png" width=28 height=28></li>
@@ -19,13 +15,14 @@
 
         <ul class="titlebar_bottonArea">
           <li><button type="button" class="titlebar_botton"><span id="reload_icon"></span></button></li>
-          <li><button type="button" class="titlebar_botton"><span id="fullscreen_icon"></span></button></li>
+          <li><button type="button" class="titlebar_botton"><span id="fullscreen_icon" class="fullscreen"></span></button></li>
           <li><button type="button" class="titlebar_botton"><span id="close_icon"></span></button></li>
         </ul>
       </div>
-      <div id="main_view">
+      <div id="viewArea">
+        <img id="fullscreen_btn" class="fullscreen" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=">
         <webview id="web_view" src="https://shinycolors.enza.fun/"></webview>
-    </div>
+      </div>
     <!-- タイトルバー上ボタンの機能実装用JavaScriptファイル -->
     <script type="text/javascript" src="./functions.js"></script>
   </body>

@@ -3,7 +3,7 @@
 const {app, BrowserView, BrowserWindow} = require('electron');
 
 app.on('ready', () => {
-  let win = new BrowserWindow({
+  const win = new BrowserWindow({
     width: 1136,
     height: 670,
     // minWidth: 1136,
@@ -22,22 +22,6 @@ app.on('ready', () => {
   });
 
   win.loadURL('file://' + __dirname + '/index.html');
-
-  // let view = new BrowserView({
-  //   webPreferences: {
-  //     nodeIntegration: false,
-  //     webviewTag: true
-  //   }
-  // });
-  // win.setBrowserView(view);
-  // view.setBounds({
-  //   x: 0,
-  //   y: 0,
-  //   width: 1136,
-  //   height: 670
-  // });
-  // view.webContents.loadURL('file://' + __dirname + '/index.html');
-  // view.webContents.loadURL('https://shinycolors.enza.fun/');
 });
 
 

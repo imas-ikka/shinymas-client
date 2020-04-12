@@ -1,61 +1,73 @@
-const w = require('electron').remote.getCurrentWindow();
-let countFullScreenPushed = 0;
+const remote = require('electron').remote;
+const browserWindow = remote.getCurrentWindow();
+const webView = document.getElementById("web_view");
+const closeButton = document.getElementById("close_icon");
+const fullScreenButton = document.getElementsByClassName("fullscreen")
+const reloadButton = document.getElementById("reload_icon");
+const viewArea = document.getElementById("viewArea");
+const titleBar = document.getElementById("titlebar");
+
 
 //閉じるボタンイベント
-document.getElementById("close_icon").addEventListener("click", () => {
-  w.close();
-  console.log("clicked exit");
+closeButton.addEventListener("click", () => {
+  browserWindow.close();
 }, false);
 
 //タッチスクリーン対応
-document.getElementById("close_icon").addEventListener('touchStart', () => {
-  w.close()
+closeButton.addEventListener('touchStart', () => {
+  browserWindow.close()
 }, false);
 
+//リロードボタンのイベント
+reloadButton.addEventListener("click", () => {
+  webView.reload();
+}, false);
+
+reloadButton.addEventListener('touchStart', () => {
+  webView.reload();
+}, false);
+
+function fullScreen(){
+  if(browserWindow.isFullScreen() == false){
+    titleBar.style.display = "none";
+    viewArea.style.top = 0;
+    browserWindow.setFullScreen(true);
+  }
+  else{
+    titleBar.style.display = "flex";
+    viewArea.style.top = "30px";
+    browserWindow.setFullScreen(false);
+  }
+}
 
 //最大化ボタンイベント
-document.getElementById("fullscreen_icon").addEventListener("click", () => {
-  console.log("clicked exit");
-  w.setFullScreen(true);
-  const titleBar = document.getElementById("titlebar");
-  titleBar.style.display = "none";
-  document.getElementById("web_view").style.top = 0;
-}, false);
-
-//タッチスクリーン対応
-document.getElementById("fullscreen_icon").addEventListener('touchStart', () => {
-  w.setFullScreen(true);
-  const titleBar = document.getElementById("titlebar");
-  titleBar.style.display = "none";
-  document.getElementById("web_view").style.top = 0;
-}, false);
+for(let i = 0; i < fullScreenButton.length; i++){
+  fullScreenButton[i].addEventListener("click", () => {
+    fullScreen();
+  }, false);
+  //タッチスクリーン対応
+  fullScreenButton[i].addEventListener("touchStart", () => {
+    fullScreen();
+  }, false);
+}
 
 //最大化後Esc押下で元に戻る
 document.addEventListener("keydown", (evt) => {
-  evt = evt || window.event;
+  evt = evt || browserWindow.event;
   let isEscape = false;
   if ("key" in evt) {
     isEscape = (evt.key == "Escape" || evt.key == "Esc");
   } else {
     isEscape = (evt.keyCode == 27);
   }
-  const wv = document.getElementById("web_view");
-  if (isEscape&& wv.style.top === "0px") {
-    wv.style.top = "30px";
+  if (isEscape && webView.style.top === "0px") {
+    webView.style.top = "30px";
     document.getElementById("titlebar").style.display = "flex";
-    w.setFullScreen(false);
+    browserWindow.setFullScreen(false);
   }
 }, false);
 
-//リロードボタンのイベント
-document.getElementById("reload_icon").addEventListener("click", () => {
-  document.getElementById("web_view").reload();
-}, false);
-
-document.getElementById("reload_icon").addEventListener('touchStart', () => {
-  document.getElementById("web_view").reload();
-}, false);
-//スクリーンショット機能実装テスト
-function test(){
-  w.capturePage();
-}
+document.getElementById("web_view").addEventListener("keydown", (evt) => {
+  evt = evt || browserWindow.event;
+  console.log(evt.key);
+})
