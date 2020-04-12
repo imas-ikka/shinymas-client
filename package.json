@@ -3,7 +3,7 @@
   "description": "アイドルマスター シャイニーカラーズ 非公式クライアント",
   "main": "src/main.js",
   "author": "panakuma",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "start": "electron ./src",
     "build_win": "electron-packager ./ shinymas-client --platform=win32 --arch=all --out=../shinymas-client-build/win32 --icon=./img/Windows.ico",
