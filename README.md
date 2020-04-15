@@ -7,7 +7,7 @@ Electronの練習がてら書いたものなので色々ヤバイところがあ
 ## 開発環境
 OS : ArchLinux systemd 245 5.6.3-arch1-1 #1 SMP PREEMPT Wed, 08 Apr 2020 07:47:16 +0000 x86_64 GNU/Linux
 
-Nodejs : v13.12.0
+Node.js : v13.12.0
 
 Electron : v7.1.14
 
@@ -21,7 +21,7 @@ Microsoft Windows 10 バージョン1909(OSビルド 18363.752)
 ## リリース実行ファイル ビルド環境
 OS : ArchLinux systemd 245 5.6.3-arch1-1 #1 SMP PREEMPT Wed, 08 Apr 2020 07:47:16 +0000 x86_64 GNU/Linux
 
-Nodejs : v13.12.0
+Node.js : v13.12.0
 
 Electron : v7.1.14
 
