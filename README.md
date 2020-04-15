@@ -23,3 +23,6 @@ Windows 8.1 Pro with Update 64bit
 また、このリポジトリで提供されておりますソースコードやリリースされた実行ファイルなどは個人ファンによる非公式なものです。
 
 株式会社バンダイナムコエンターテインメントならびに株式会社ドリコム、株式会社BXD、その他関係会社との関係はございませんので、このリポジトリに関することを先の会社に問い合わせることはしないで下さい。
+
+# License
+[MIT License](https://raw.githubusercontent.com/imas-ikka/shinymas-client/master/LICENSE)
