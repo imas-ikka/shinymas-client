@@ -5,17 +5,27 @@ Electronの練習がてら書いたものなので色々ヤバイところがあ
 
 # 開発環境および動作検証環境
 ## 開発環境
-OS : ArchLinux systemd 245 5.5.9-arch1-2 #1 SMP PREEMPT Thu, 12 Mar 2020 23:01:33 +0000 x86_64 GNU/Linux
+OS : ArchLinux systemd 245 5.6.3-arch1-1 #1 SMP PREEMPT Wed, 08 Apr 2020 07:47:16 +0000 x86_64 GNU/Linux
 
-Electron : v7.1.4
+Nodejs : v13.12.0
+Electron : v7.1.14
+
+## リリース実行ファイル ビルド環境
+OS : ArchLinux systemd 245 5.6.3-arch1-1 #1 SMP PREEMPT Wed, 08 Apr 2020 07:47:16 +0000 x86_64 GNU/Linux
+
+Nodejs : v13.12.0
+Electron : v7.1.14
+Electron Packager : v14.2.1
+Wine : wine-5.5
 
 ## 検証環境
 ### Linux
-ArchLinux systemd 245 5.5.9-arch1-2 #1 SMP PREEMPT Thu, 12 Mar 2020 23:01:33 +0000 x86_64 GNU/Linux
+ArchLinux systemd 245 5.6.3-arch1-1 #1 SMP PREEMPT Wed, 08 Apr 2020 07:47:16 +0000 x86_64 GNU/Linux
 
 
 ### Windows
-Windows 8.1 Pro with Update 64bit
+Microsoft Windows 10 バージョン1909(OSビルド 18363.752)
+
 
 # 免責事項
 当リポジトリのコントリビューターは、当リポジトリで配布されているソースコードや実行ファイルが起因して発生したいかなる損害の一切の責任を負いません。自己責任のもと、ご使用下さい。
