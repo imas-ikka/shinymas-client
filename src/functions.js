@@ -1,4 +1,5 @@
 const remote = require('electron').remote;
+const ipc = require("electron").ipcRenderer;
 const browserWindow = remote.getCurrentWindow();
 const webView = document.getElementById("web_view");
 const closeButton = document.getElementById("close_icon");
@@ -67,7 +68,25 @@ document.addEventListener("keydown", (evt) => {
   }
 }, false);
 
-document.getElementById("web_view").addEventListener("keydown", (evt) => {
-  evt = evt || browserWindow.event;
-  console.log(evt.key);
-})
+// document.getElementById("web_view").addEventListener("resize", () => {
+//   ipc.send("SET_BOUNDS", {
+//     x: webView.clientLeft,
+//     y: webView.clientTop + 30,
+//     width: webView.clientWidth,
+//     height: webView.clientHeight
+//   });
+// }, false)
+
+//ipc.send("SET_BOUNDS", {
+//  x: webView.clientLeft,
+//  y: webView.clientTop + 30,
+//  width: webView.clientWidth,
+//  height: webView.clientHeight
+//});
+
+// ipc.on("RETURN_BOUNDS", {
+//   x: webView.clientLeft,
+//   y: webView.clientTop + 30,
+//   width: webView.clientWidth,
+//   height: webView.clientHeight
+// });
