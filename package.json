@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/panakuma/shinymas-client#readme",
   "devDependencies": {
-    "electron": "~7",
+    "electron": "~18",
     "electron-packager": "*"
   },
   "dependencies": {}
